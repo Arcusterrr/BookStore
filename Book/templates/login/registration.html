@@ -1,0 +1,23 @@
+{%extends "base.html"%}
+{%load static%}
+{%block style%}<link rel="stylesheet" href="{% static 'css/registration.css' %}">{%endblock style%}
+{%block content%}
+
+<div class="registration__form">
+    <form method="POST">
+        {% csrf_token %}
+
+<!--        <input class="input_reg" type="text" required placeholder="Имя на сайте" name = "name"><br>-->
+
+<!--        <input class="input_reg" type="text" required placeholder="Логин" name = "login"><br>-->
+
+<!--        <input class="input_reg" type="text" required placeholder="Пароль" name = "password"><br>-->
+        {{form.as_p}}
+
+        <button type="submit">Регистрация</button>
+    </form>
+    <a class="linknone" href="{% url 'authorization:login' %}"><button type="submit">Уже есть аккаунт? Авторизируйся</button></a>
+
+</div>
+
+{%endblock content%}

@@ -1,0 +1,47 @@
+.linknone{
+    text-decoration: none;
+}
+
+
+.good__card{
+    border: 2px solid green;
+    border-radius: 25px;
+    width: 15%;
+    height: 370px;
+    vertical-align: top;
+    margin: 10px;
+    background-color: lightgreen;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: box-shadow .5s;
+}
+
+.good__card:hover{
+    /*transform: scale(1.1);*/
+    box-shadow: 0 0 10px rgba(5, 15 , 0 ,0.5);
+}
+
+.bookimg img{
+    display: block;
+    margin: 10px auto;
+    width: 150px;
+    height: 200px;
+}
+
+.bookcontent{
+    border-top: 2px solid green;
+}
+
+.bookname{
+    font-size: 20px;
+    margin: 5px;
+    text-align: center;
+}
+
+.bookprice{
+    margin: 10px;
+    text-align: center;
+    font-size: 25px;
+    color: #101010;
+}

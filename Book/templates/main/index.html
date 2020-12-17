@@ -1,0 +1,52 @@
+{%extends "base.html"%}
+{%load static%}
+{%block style%}<link rel="stylesheet" href="{% static 'css/index.css' %}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{%endblock style%}
+{%block title%}Главная страница{%endblock title%}
+{%block content%}
+
+<div class="aboutCompany">
+    <div id="block-for-slider">
+        <div id="viewport">
+            <ul id="slidewrapper">
+                <li class="slide"><img src="{% static 'images/mainback.jpg'%}" alt="1" class="slide-img"></li>
+                <li class="slide"><img src="{% static 'images/mainback1.jpg'%}" alt="2" class="slide-img"></li>
+                <li class="slide"><img src="{% static 'images/mainback2.jpg'%}" alt="3" class="slide-img"></li>
+                <li class="slide"><img src="{% static 'images/mainback3.jpg'%}" alt="4" class="slide-img"></li>
+            </ul>
+            <div id="prev-next-btns">
+                <div id="prev-btn">❮</div>
+                <div id="next-btn">❯</div>
+            </div>
+            <ul id="nav-btns">
+                <li class="slide-nav-btn"></li>
+                <li class="slide-nav-btn"></li>
+                <li class="slide-nav-btn"></li>
+                <li class="slide-nav-btn"></li>
+            </ul>
+        </div>
+    </div>
+    <div class="purpose">
+        <h1>О нас</h1>
+        <div class="content">
+            <b>Наша главная цель</b> – стать для посетителей не просто хорошим книжным магазином европейского уровня, но и добрым внимательным другом.
+        </div>
+        <div class="content">
+            <b>Мы верим: </b> книги действительно могут изменить жизнь к лучшему. Поэтому мы предоставляем посетителям максимум информации по всем отраслям знаний и помогаем им настроиться на позитивный лад. Ежедневно к нам приходят миллионы людей, для которых чтение – жизненная потребность, важное условие личностного роста.
+        </div>
+        <div class="content">
+            <b>Для нас важно</b>, чтобы посетители проводили время в магазинах с максимальной пользой и получали то, что им необходимо для досуга и самовыражения.
+Поэтому кроме книг мы предлагаем:
+            <ol>
+                <li>Широкий выбор канцелярских товаров, медиа-продукции и smart-сувениров, товаров для хобби и творчества;</li>
+                <li>Продукцию с уникальным дизайном; </li>
+                <li>Специальный ассортимент для профессиональных художников и декораторов;</li>
+                <li>Оригинальные сладости. </li>
+            </ol>
+        </div>
+
+    </div>
+</div>
+<script src="{%static 'js/indexScript.js'%}"></script>
+{%endblock content%}

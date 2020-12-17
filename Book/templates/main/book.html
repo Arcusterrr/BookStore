@@ -1,0 +1,59 @@
+{%extends "base.html"%}
+{%load static%}
+{%block style%}<link rel="stylesheet" href="{% static 'css/book.css' %}">{%endblock style%}
+{%block content%}
+<div class="bookcontent">
+    <div class="bookImage">
+        <img height="350" width="350" src="{{Book.book_img}}"/>
+    </div>
+    <div class="bookInfo">
+        <div>
+            <div class="bookName">
+                {{Book.book_name}}
+            </div>
+            <div class="bookAuthor">
+                Автор: {{Book.book_author}}
+            </div>
+            <div class="bookDescription">
+                Описание: {{Book.book_desc}}
+            </div>
+            <div class="bookCategory">
+                Категория: {{Book.category}}
+            </div>
+        </div>
+        <div class="buyer">
+            <div class="bookPrice">
+                {{Book.book_price}} р.
+
+            </div>
+            <div class="but"><a href="#"><button class="getBuy"><img src="{% static 'images/busket.svg' %}">Купить</button></a></div>
+        </div>
+    </div>
+</div>
+<div class="comments">
+
+    <div class="createComment">
+        {%if request.user.is_authenticated %}
+        <form action="{%url 'contentLoader:getComment' Book.id %}" method="POST">
+            {% csrf_token %}
+            <input type="text" name="comment">
+            <input type="submit" value="Отправить">
+        </form>
+        {% else %}
+        <div class="response-info">Авторизируйтесь, чтобы оставлять комментарии</div>
+        {%endif%}
+    </div>
+
+    {%for comment in Comment%}
+    <div class="userName">
+        {{comment.creator_user.username}}
+    </div>
+    <div class="commentContent">
+        {{comment.content}}
+    </div>
+    <div class="commentDate">
+        {{comment.date_create}}
+    </div>
+    {%endfor%}
+</div>
+{%endblock content%}

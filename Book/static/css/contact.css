@@ -1,0 +1,31 @@
+textarea {
+	/* = Убираем скролл */
+	overflow: auto;
+    font-size: 24px;
+	/* = Убираем увеличение */
+	resize: none;
+	width: 900px;
+	height: 500px;
+
+	/* = Добавим фон, рамку, отступ*/
+	background: #f6f6f6;
+	border: 1px solid #cecece;
+	border-radius: 8px 0 0 0;
+	padding: 8px 0 8px 10px;
+}
+.content{
+    /*padding: 10px;*/
+    text-align: center;
+}
+.contactForm{
+    display: inline-block;
+    /*padding: 10px;*/
+}
+
+.buttonForm{
+    font-size: 20px;
+    width: 150px;
+    height: 80px;
+    border-radius: 10px;
+    cursor: pointer;
+}

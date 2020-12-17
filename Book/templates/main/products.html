@@ -1,0 +1,22 @@
+{%extends "base.html"%}
+{%load static%}
+{%block style%}<link rel="stylesheet" href="{% static 'css/products.css' %}">{%endblock style%}
+{%block content%}
+{% for book in Books %}
+
+<a class="linknone" href="{% url 'contentLoader:getProduct' book.id %}">
+    <div class="good__card">
+        <div class="bookimg">
+            <img src="{{book.book_img}}">
+        </div>
+            <div class="bookcontent"><div class="bookname">
+                {{ book.book_name }}
+            </div>
+            <div class="bookprice">
+                {{book.book_price}} р.
+            </div>
+        </div>
+    </div>
+</a>
+{% endfor %}
+{%endblock%}

@@ -1,0 +1,86 @@
+.bookcontent{
+    display: flex;
+}
+
+.bookImage{
+    width: 25%;
+    margin: 20px;
+    margin-left: 50px;
+}
+
+.bookImage img{
+    width: 100%;
+    height: 100%;
+}
+
+.bookInfo{
+    margin: 20px;
+    border-left: 1px solid black;
+    padding: 10px;
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bookName{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.bookAuthor{
+    font-size: 25px;
+}
+
+.bookDescription{
+    margin: 5px;
+}
+
+.bookPrice{
+    text-align: center;
+    font-size: 25px;
+    border: 2px solid darkgreen;
+    border-radius: 50px;
+    background-color: green;
+    color: white;
+    box-shadow: 0 0 10px black;
+    vertical-align: bottom;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: 5px;
+}
+
+.buyer{
+    margin: 0 auto;
+    perspective: 800px;
+}
+
+.buyer button{
+    background-color: #286090;
+    width: 100%;
+    border-radius: 3px;
+    color: white;
+    font-size: 18px;
+    display: block;
+    padding: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px 0 black;
+    transition: box-shadow 0.5s linear;
+}
+
+.but:hover button{
+    box-shadow: 3px 4px 10px 3px black;
+}
+
+.but a{
+    text-decoration: none;
+}
+
+.buyer button img{
+    width: 20%;
+    margin-right: 10px;
+}
+
+.buyer button *{
+    vertical-align: middle;
+}
