@@ -26,7 +26,11 @@
                 {{Book.book_price}} р.
 
             </div>
+            {% if request.user.is_authenticated %}
             <div class="but"><a href="#"><button class="getBuy"><img src="{% static 'images/busket.svg' %}">Купить</button></a></div>
+            {% else %}
+            <div class="but"><a href="#"><button class="getBuy"><img src="{% static 'images/busket.svg' %}">Авторизируйтесь</button></a></div>
+            {% endif %}
         </div>
     </div>
 </div>

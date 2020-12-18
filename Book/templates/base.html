@@ -20,7 +20,7 @@
             <a class="header__href" href="{% url 'contentLoader:index' %}"><div class="main">Главная</div></a>
             <a class="header__href" href="{% url 'contentLoader:products' %}"><div class="goods">Книги</div></a>
             <a class="header__href" href="{% url 'contentLoader:category' %}"><div class="category">Категории</div></a>
-            <a class="header__href" href="{% url 'contentLoader:contact' %}"><div class="category">Отзыв</div></a>
+            <a class="header__href" href="{% url 'contentLoader:contact' %}"><div class="category">Обратная форма</div></a>
             {%if request.user.is_authenticated %}
             <a class="header__href" href="{% url 'authorization:logout' %}"><div class="login">Выйти</div></a>
             {% else %}

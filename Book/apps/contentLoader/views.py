@@ -1,11 +1,12 @@
-from django.shortcuts import render, HttpResponseRedirect
+from django.shortcuts import render, HttpResponseRedirect, get_object_or_404
 from django.http import HttpResponse
-from .models import Book, Category, Comments
+from .models import Book, Category, Comments, Basket
 from django.utils import timezone
 from django.core.mail import send_mail, BadHeaderError
 from .forms import ContactForm
 from django.conf import settings
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 
 def index(request):
@@ -60,3 +61,29 @@ def contactform(request):
             return render(request, 'login/authorization.html', {'error': 'Авторизируйтесь, чтобы отправить отзыв'})
 
     return render(request, 'main/contact.html')
+
+def basket(request):
+    baskets = Basket.objects.filter(user=request.user)
+    book = []
+    for basket in baskets:
+        book.append(Book.objects.filter(id=basket.book_id))
+
+    for booken in baskets:
+        print(booken.Book.book_name)
+    content = {'basket':baskets, 'books':book}
+    return render(request, 'basketapp/basket.html', content)
+
+
+def basketAdd(request, pk):
+    book = get_object_or_404(Book, pk=pk)
+    basket = Basket.objects.filter(user=request.user, book=book).first()
+    if not basket:
+        basket = Basket(user=request.user, book=book)
+        basket.quantity += 1
+        basket.save()
+    return HttpResponseRedirect(reverse('contentLoader:basket'))
+
+
+def basket_remove(request, pk):
+    content = {}
+    return render(request, 'basketapp/basket.html', content)
